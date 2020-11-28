@@ -18,7 +18,7 @@ static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "monospace:size=10", "FontAwesome:pixelsize=10:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
+static char normfgcolor[]           = "#D1EFFF";
 static char selfgcolor[]            = "#D1EFFF";
 static char selbordercolor[]        = "#D1EFFF";
 static char selbgcolor[]            = "#222222";
