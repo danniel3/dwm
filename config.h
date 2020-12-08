@@ -18,7 +18,7 @@ static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "monospace:size=10", "FontAwesome:pixelsize=10:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#D1EFFF";
+static char normfgcolor[]           = "#AAA";
 static char selfgcolor[]            = "#D1EFFF";
 static char selbordercolor[]        = "#D1EFFF";
 static char selbgcolor[]            = "#222222";
@@ -149,28 +149,28 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_0,		tag,		{.ui = ~0 } },
 
 	{ MODKEY,			XK_Tab,		view,		{0} },
+	/* { MODKEY,			XK_backslash,	view,		{0} }, */
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
 	{ MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} }, /* bstack */
-	{ MODKEY,			XK_y,		setlayout,	{.v = &layouts[2]} }, /* spiral */
-	{ MODKEY|ShiftMask,		XK_y,		setlayout,	{.v = &layouts[3]} }, /* dwindle */
-	{ MODKEY,			XK_u,		setlayout,	{.v = &layouts[4]} }, /* deck */
-	{ MODKEY|ShiftMask,		XK_u,		setlayout,	{.v = &layouts[5]} }, /* monocle */
-	{ MODKEY,			XK_i,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
-	{ MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
+	/* { MODKEY,			XK_y,		setlayout,	{.v = &layouts[2]} }, /1* spiral *1/ */
+	/* { MODKEY|ShiftMask,		XK_y,		setlayout,	{.v = &layouts[3]} }, /1* dwindle *1/ */
+	/* { MODKEY,			XK_u,		setlayout,	{.v = &layouts[4]} }, /1* deck *1/ */
+	/* { MODKEY|ShiftMask,		XK_u,		setlayout,	{.v = &layouts[5]} }, /1* monocle *1/ */
+	/* { MODKEY,			XK_i,		setlayout,	{.v = &layouts[6]} }, /1* centeredmaster *1/ */
+	/* { MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /1* centeredfloatingmaster *1/ */
 	{ MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
-	{ MODKEY,			XK_backslash,		view,		{0} },
 	/* { MODKEY|ShiftMask,		XK_backslash,		spawn,		SHCMD("") }, */
 
-	{ MODKEY,			XK_a,		togglegaps,	{0} },
-	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
+	/* { MODKEY,			XK_a,		togglegaps,	{0} }, */
+	/* { MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} }, */
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
 	/* { MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("") }, */
 	/* { MODKEY,			XK_d,		spawn,		SHCMD("") } }, */
-	{ MODKEY,			XK_f,		togglefullscr,	{0} },
-	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
+	/* { MODKEY,			XK_f,		togglefullscr,	{0} }, */
+	/* { MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} }, */
 	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
 	{ MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } },
 	{ MODKEY,			XK_h,		setmfact,	{.f = -0.05} },
@@ -181,9 +181,9 @@ static Key keys[] = {
 	{ MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },
 	/* { MODKEY|ShiftMask,		XK_apostrophe,	spawn,		SHCMD("") }, */
 
-	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
+	/* { MODKEY,			XK_z,		incrgaps,	{.i = +3 } }, */
 	/* { MODKEY|ShiftMask,		XK_z,		spawn,		SHCMD("") }, */
-	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
+	/* { MODKEY,			XK_x,		incrgaps,	{.i = -3 } }, */
 	/* { MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("") }, */
 	/* { MODKEY,			XK_c,		spawn,		SHCMD("") }, */
 	/* { MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("") }, */
@@ -191,15 +191,14 @@ static Key keys[] = {
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	/* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
 
-	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
-	{ MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } },
-	{ MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
-	{ MODKEY|ShiftMask,		XK_Right,	tagmon,		{.i = +1 } },
-
-	{ MODKEY,			XK_Page_Up,	shiftview,	{ .i = -1 } },
-	{ MODKEY|ShiftMask,		XK_Page_Up,	shifttag,	{ .i = -1 } },
-	{ MODKEY,			XK_Page_Down,	shiftview,	{ .i = +1 } },
-	{ MODKEY|ShiftMask,		XK_Page_Down,	shifttag,	{ .i = +1 } },
+	/* { MODKEY,			XK_Left,	focusmon,	{.i = -1 } }, */
+	/* { MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } }, */
+	/* { MODKEY,			XK_Right,	focusmon,	{.i = +1 } }, */
+	/* { MODKEY|ShiftMask,		XK_Right,	tagmon,		{.i = +1 } }, */
+	/* { MODKEY,			XK_Page_Up,	shiftview,	{ .i = -1 } }, */
+	/* { MODKEY|ShiftMask,		XK_Page_Up,	shifttag,	{ .i = -1 } }, */
+	/* { MODKEY,			XK_Page_Down,	shiftview,	{ .i = +1 } }, */
+	/* { MODKEY|ShiftMask,		XK_Page_Down,	shifttag,	{ .i = +1 } }, */
 
 	/* { MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") }, */
 	/* { MODKEY,			XK_F2,		spawn,		SHCMD("tutorialvids") }, */
@@ -214,7 +213,7 @@ static Key keys[] = {
 	/* { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") }, */
 	/* { MODKEY,			XK_F12,		xrdb,		{.v = NULL } }, */
 	{ MODKEY,			XK_space,	zoom,		{0} },
-	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
+	/* { MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} }, */
 
 	/* { 0,				XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") }, */
 	/* { ShiftMask,			XK_Print,	spawn,		SHCMD("maimpick") }, */
