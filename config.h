@@ -191,10 +191,10 @@ static Key keys[] = {
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	/* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
 
-	/* { MODKEY,			XK_Left,	focusmon,	{.i = -1 } }, */
-	/* { MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } }, */
-	/* { MODKEY,			XK_Right,	focusmon,	{.i = +1 } }, */
-	/* { MODKEY|ShiftMask,		XK_Right,	tagmon,		{.i = +1 } }, */
+	{ MODKEY,			XK_bracketleft,	focusmon,	{.i = -1 } },
+	{ MODKEY|ShiftMask,		XK_bracketleft,	tagmon,		{.i = -1 } },
+	{ MODKEY,			XK_bracketright,	focusmon,	{.i = +1 } },
+	{ MODKEY|ShiftMask,		XK_bracketright,	tagmon,	{.i = +1 } },
 	/* { MODKEY,			XK_Page_Up,	shiftview,	{ .i = -1 } }, */
 	/* { MODKEY|ShiftMask,		XK_Page_Up,	shifttag,	{ .i = -1 } }, */
 	/* { MODKEY,			XK_Page_Down,	shiftview,	{ .i = +1 } }, */
@@ -213,7 +213,7 @@ static Key keys[] = {
 	/* { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") }, */
 	/* { MODKEY,			XK_F12,		xrdb,		{.v = NULL } }, */
 	{ MODKEY,			XK_space,	zoom,		{0} },
-	/* { MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} }, */
+	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
 
 	/* { 0,				XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") }, */
 	/* { ShiftMask,			XK_Print,	spawn,		SHCMD("maimpick") }, */
