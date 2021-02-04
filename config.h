@@ -169,6 +169,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
 	/* { MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("") }, */
 	/* { MODKEY,			XK_d,		spawn,		SHCMD("") } }, */
+	/* { MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("passmenu") }, */
 	/* { MODKEY,			XK_f,		togglefullscr,	{0} }, */
 	/* { MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} }, */
 	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
@@ -328,3 +329,4 @@ static Button buttons[] = {
 	{ ClkTagBar,		0,		Button5,	shiftview,	{.i = 1} },
 	{ ClkRootWin,		0,		Button2,	togglebar,	{0} },
 };
+
