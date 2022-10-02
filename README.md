@@ -1,4 +1,6 @@
-# Luke's build of dwm
+# My build of suckless's dwm
+
+Based on Luke Smith's build of dwm
 
 ## FAQ
 
