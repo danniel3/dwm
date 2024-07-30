@@ -106,7 +106,9 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[]  = { TERMINAL, NULL };
+/*static const char *termcmd[]  = { TERMINAL, NULL };*/
+/* !! If you stop using sxhkd to launch terminal apps, the above needs to be uncommented!! */
+
 
 /*
  * Xresources preferences to load at startup
